@@ -1,0 +1,23 @@
+<div class="container">
+    <form [formGroup]="formGroup" (validSubmit)="onSubmit()" class="form-signin">
+        <img class="mb-4" src="https://www.flaticon.com/svg/static/icons/svg/860/860969.svg" alt="" width="72"
+            height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Zaloguj się</h1>
+        <label for="inputEmail" class="sr-only">Adres e-mail</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Adres email" required autofocus
+            formControlName="Email">
+        <label for="inputPassword" class="sr-only">Hasło</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Hasło" required
+            formControlName="Password">
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Zapamiętaj mnie
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Zaloguj</button>
+        <p>
+            <a class="btn btn-outline-primary btn-block" routerLink="/zarejestruj" role="button"
+                type="submit">Zarejestruj się</a>
+        </p>
+    </form>
+</div>

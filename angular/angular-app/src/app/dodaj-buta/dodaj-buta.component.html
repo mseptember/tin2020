@@ -1,0 +1,25 @@
+<div>
+    <form [formGroup]="formGroup" class="form-signin" (ngSubmit)="addObuwie()">
+        <h3 class="">Dodaj nowego buta</h3>
+        <div>
+            <label for="inputMarka" class="sr-only">Marka</label>
+            <input type="text" id="inputMarka" class="form-control" placeholder="Marka" required autofocus
+                formControlName="marka">
+        </div>
+        <div>
+            <label for="inputRozmiar" class="sr-only">Rozmiar</label>
+            <input type="text" id="inputRozmiar" class="form-control" placeholder="Rozmiar" required
+                formControlName="rozmiar">
+        </div>
+        <div>
+            <label for="inputMaterial" class="sr-only">Materiał</label>
+            <input type="text" id="inputMaterial" class="form-control" placeholder="Materiał" required
+                formControlName="material">
+        </div>
+        <div>
+            <label for="inputCena" class="sr-only">Cena</label>
+            <input type="text" id="inputCena" class="form-control" placeholder="Cena" required formControlName="cena">
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Dodaj</button>
+    </form>
+</div>

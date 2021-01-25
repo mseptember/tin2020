@@ -1,0 +1,38 @@
+<div class="container">
+    <form [formGroup]="formGroup" (validSubmit)="onSubmit()" class="form-signin">
+        <img class="mb-4" src="https://www.flaticon.com/svg/static/icons/svg/860/860969.svg" alt="" width="72"
+            height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Rejestracja</h1>
+        <h3 class="h6 mb-3 font-weight-normal">Uzupełnij poniższe pola, by utworzyć konto. </h3>
+        <div>
+            <label for="inputName" class="sr-only">Imię</label>
+            <input type="text" id="inputName" class="form-control" placeholder="Imię" required autofocus
+                formControlName="Name">
+        </div>
+        <div>
+            <label for="inputSurname" class="sr-only">Nazwisko</label>
+            <input type="text" id="inputSurname" class="form-control" placeholder="Nazwisko" required
+                formControlName="Surname">
+        </div>
+        <div>
+            <label for="inputEmail" class="sr-only">Adres e-mail</label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Adres email" required
+                formControlName="Email">
+        </div>
+        <div>
+            <label for="inputPassword" class="sr-only">Hasło</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Hasło" required
+                formControlName="Password">
+        </div>
+        <div>
+            <label for="inputPasswordRe" class="sr-only">Powtórz hasło</label>
+            <input type="password" id="inputPasswordRe" class="form-control" placeholder="Powtórz hasło" required
+                formControlName="RePassword">
+            <div *ngIf="!formGroup.errors?.notMatchingPasswords"
+                class="cross-validation-error-message alert alert-danger">
+                Hasła nie są identyczne
+            </div>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Zarejestruj się</button>
+    </form>
+</div>

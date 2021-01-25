@@ -1,0 +1,45 @@
+<body>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" routerLink="/">
+    <img src="https://www.flaticon.com/svg/static/icons/svg/860/860969.svg" width="45" alt=""
+      class="d-inline-block align-middle mr-2">
+    <span class="text-uppercase font-weight-bold">SHOES</span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+    (click)="isMenuCollapsed = !isMenuCollapsed">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/" (click)="isMenuCollapsed = true">Strona główna</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/sklep" (click)="isMenuCollapsed = true">Sklep</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/o-nas" (click)="isMenuCollapsed = true">O nas</a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/zaloguj" (click)="isMenuCollapsed = true">Zaloguj/Zarejestruj</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<footer class="footer mt-auto">
+  <div class="text-center">
+    Maciej Wrzesień S17390
+  </div>
+</footer>

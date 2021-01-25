@@ -1,0 +1,45 @@
+<button class="btn btn-outline-primary btn-back" (click)="goBack()">Wróć</button>
+
+<div class="container" *ngIf="but">
+    <div class="card mb-3">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src='assets/img/but{{but?.idObuwia}}.png' class="card-img" alt="{{but?.marka}}">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <div>
+                            <label>Marka:
+                                <input [(ngModel)]="but.marka" placeholder="Marka" />
+                            </label>
+                            <button class="btn btn-primary btn-save" (click)="update()">Zapisz</button>
+                        </div>
+                    </h5>
+                    <p class="card-text">Material: {{but?.material}}</p>
+                    <p class="card-text">Dostępne rozmiary: {{but?.rozmiar}}</p>
+                    <div ngbDropdown class="dropdown">
+                        <button ngbDropdownToggle class="btn btn-secondary dropdown-toggle" type="button"
+                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Wybierz rozmiar
+                        </button>
+                        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" (click)="isChoosen = true">42</a>
+                            <a class="dropdown-item" (click)="isChoosen = true">43</a>
+                            <a class="dropdown-item" (click)="isChoosen = true">44</a>
+                            <a class="dropdown-item" (click)="isChoosen = true">45</a>
+                            <a class="dropdown-item" (click)="isChoosen = true">46</a>
+                        </div>
+                    </div>
+                    <p class="card-text"><small class="text-muted">W magazynie jeszcze 10 par</small></p>
+                    <div>
+                        <label>
+                            Usuń buta: 
+                        </label>
+                        <button class="btn btn-primary btn-danger btn-delete" (click)="delete()">Usuń</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
